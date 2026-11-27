@@ -1,6 +1,6 @@
 # Apple Inc. Financial Statement Extraction from SEC EDGAR (FY2021–FY2026)
 
-Beginner-friendly Python scripts that pull Apple's historical financial statement data from the official **SEC EDGAR Company Facts API**, clean and validate it, and load it into the `Raw IS`, `Raw BS` and `Raw CF` sheets of an Excel financial model. The data feeds a three-statement model and DCF valuation of Apple. The forecasting and valuation work itself is not part of this repository.
+Beginner-friendly Python scripts that pull Apple's historical financial statement data from the official **SEC EDGAR Company Facts API**, clean and validate it, and load it into the `Raw IS`, `Raw BS` and `Raw CF` sheets of an Excel financial model. The data feeds a three-statement model and DCF valuation of Apple.
 
 - **Source:** SEC EDGAR only (`data.sec.gov`). No third-party financial data providers are used for extraction.
 - **Scope:** annual figures from Apple's **10-K filings**, fiscal years 2021–2026.
@@ -35,6 +35,7 @@ https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json
 | `step6_coverage.py` | Optional tag-discovery tool. Reports which of the additional line items exist for each year, and searches every namespace for tags containing keywords. Useful if you adapt this to another company. |
 | `step7_extract_and_append.py` | Extracts the additional line items, validates them against reported totals, and appends them as new rows to `Raw BS` and `Raw CF`. |
 | `step8_add_fy2026.py` | Adds an `FY2026` column to all three Raw sheets and adds the `Intangible assets, net` row. |
+| `Apple_Financial_Model.xlsx` | The Excel workbook consisting of the financial model |
 
 The scripts are numbered by development order. Steps 2–4 were early tests and are not included.
 
